@@ -3,12 +3,12 @@ import java.util.random.RandomGenerator;
 public class Main {
     public static double[][] w;
 
-    private static void generateRX(short[] arrShort, double[] arrDouble) {
+    private static void generateRX(short[] s, double[] x) {
         for (int i = 1; i <= 16; i++) {
-            arrShort[16 - i] = (short) i;
+            s[16 - i] = (short) i;
         }
         for (int i = 0; i < 11; i++) {
-            arrDouble[i] = RandomGenerator.getDefault().nextDouble(-14.0, 11.0);
+            x[i] = RandomGenerator.getDefault().nextDouble(-14.0, 11.0);
         }
     }
 
