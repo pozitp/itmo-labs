@@ -1,14 +1,26 @@
 import java.util.random.RandomGenerator;
 
 public class Main {
+    /*
+    Create a public variable w for (possibly) future external use.
+    Although for security reasons we should only use a function that only returns the value of the variable, otherwise it may cause bugs, but in this case we will ignore it.
+    */
     public static double[][] w;
 
-    private static void generateRX(short[] s, double[] x) {
+    /*
+    We will use the private type only for those functions that are used for internal calculations and must be inaccessible outside the class.
+    This is a necessity to ensure class security and proper debugging and testing, otherwise it will be hard to catch places where data changes occur.
+    */
+
+    private static void generateSX(short[] s, double[] x) {
         for (int i = 1; i <= 16; i++) {
+            // Generate reversed array (0=16..15=1)
             s[16 - i] = (short) i;
         }
         for (int i = 0; i < 11; i++) {
-            x[i] = RandomGenerator.getDefault().nextDouble(-14.0, 11.0);
+            // Generate random number (type Int) in range -14..11, then add it to double array
+            // (It's automatically converts to double (-14 => -14.0))
+            x[i] = RandomGenerator.getDefault().nextInt(-14, 11);
         }
     }
 
@@ -25,21 +37,26 @@ public class Main {
         }
     }
 
+    // Make the output readable and suitable for the requirements
     private static void printFormatted(double[][] w) {
+        // Go through rows
         for (double[] row : w) {
+            // Go through elements of row
             for (double e : row) {
-                System.out.format("%8.4f ", e);
+                System.out.format("%8.4f ", e); // Set format width (8 symbols), and 4 symbols after dot
             }
-            System.out.println();
+            System.out.println(); // newline
         }
     }
 
     public static void main(String[] args) {
+        // Initialize variables
         short[] s = new short[16];
         double[] x = new double[11];
         w = new double[16][11];
 
-        generateRX(s, x);
+        // Generate array elements
+        generateSX(s, x);
 
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 11; j++) {
@@ -47,6 +64,6 @@ public class Main {
             }
         }
 
-        printFormatted(w);
+        printFormatted(w); // Output final elements
     }
 }
