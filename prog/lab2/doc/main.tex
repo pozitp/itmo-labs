@@ -1,5 +1,6 @@
 \usepackage{wasysym}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LAB-5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %>>>>>>>>>>>>>>>>>>>>>>>>>> ПЕРЕМЕННЫЕ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 %>>>>> Информация о кафедре
 %\newcommand{\year}{2021 г.}  % Год устанавливается автоматически
 \newcommand{\city}{Санкт-Петербург}  %  Футер, нижний колонтитул на титульном листе
@@ -11,7 +12,7 @@
 %\newcommand{\specialization}{}  % пятая строка
 
 %<<<<< Информация о кафедре
-
+%Ашч
 %>>>>> Назание работы
 \newcommand{\reporttype}{ОТЧЕТ ПО ЛАБОРАТОРНОЙ РАБОТЕ} % тип работы, (главный заголовок титульного листа)
 \newcommand{\lab}{Лабораторная работа}          % вид работы
@@ -66,10 +67,10 @@
 
     \Section{Задание варианта \variant}
 
-    \begin{center}
-        , , ,
-    \end{center}
-    \noindent
+%    \begin{center}
+%        , , ,
+%    \end{center}
+%    \noindent
 %    \textbf{
 %    % Заглавное описание....:
 %        Заголовок
@@ -144,19 +145,29 @@
         Он позволяет на один или несколько ходов изменить состояние покемона или модификатор его базовых характеристик.
         \item Доделать все необходимые атаки и всех покемонов, распределить покемонов по командам, запустить сражение.
     \end{enumerate}
+    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
+        \centering
+        % { граница для иллюстрации
+        % \setlength{\fboxsep}{0pt}% убрать отсутп от границы
+        % \setlength{\fboxrule}{1pt}%
+        % \fbox{%
+        \includegraphics[width=\textwidth]{res/pokemons.jpeg}
+        % }} % ограничение области действия параметров
+        \caption{Покемоны и их атаки}
+        \label{fig:enter-label}
+    \end{figure}
 
-
-    \begin{center}
-        ' ' '
-    \end{center}
+%    \begin{center}
+%        ' ' '
+%    \end{center}
 
     \newpage
     \Section{Выполнение задания.}
-    Задание было выполнено в редакторе кода, позже собрано с помощью \verb|javac| в \verb|jar| файл \verb|itmo_proga_lab1.jar| непосредственно на сервере.
+    Задание было выполнено в редакторе кода IntejjiJ IDEA, собрано в \verb|jar| файл \verb|lab2.jar| и загружено в Git репозиторий на GitHub.
 %    \newpage
     \Subsection{Листинги кода}
     Листинг из файла~\ref{lst:java}
-    \lstinputlisting[caption={Исходный код программы},label={lst:java},language=Java]{../src/Main.java}
+    \lstinputlisting[caption={Исходный код главного класса программы},label={lst:java},language=Java]{../src/Main.java}
 
 %    Листинг в код latex \ref{lst:sql}
 %    \begin{lstlisting}[caption={SQL},label={lst:sql}]
@@ -168,28 +179,196 @@
 %    Листинг прямо в текст: \lstinline[columns=fixed]{declare}. Либо еще так: \verb|declare|.
 
 %    Вставленное изображение с описанием и шириной по тексту.
-%    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
-%        \centering
-%        % { граница для иллюстрации
-%        % \setlength{\fboxsep}{0pt}% убрать отсутп от границы
-%        % \setlength{\fboxrule}{1pt}%
-%        % \fbox{%
-%        \includegraphics[width=\textwidth]{res/UML-class-diagram.png}
-%        % }} % ограничение области действия параметров
-%        \caption{Caption}
-%        \label{fig:enter-label}
-%    \end{figure}
+    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
+        \centering
+        % { граница для иллюстрации
+        % \setlength{\fboxsep}{0pt}% убрать отсутп от границы
+        % \setlength{\fboxrule}{1pt}%
+        % \fbox{%
+        \includegraphics[width=\textwidth]{res/UML-class-diagram.png}
+        % }} % ограничение области действия параметров
+        \caption{UML диаграмма классов с методами и полями}
+        \label{fig:enter-label2}
+    \end{figure}
 
 
 % Выполнение задания...
     \Section{Результат работы программы.}
-    \Subsection{Первый запуск.}
+%    \Subsection{Первый запуск.}
+    \begin{lstlisting}[caption={Результат выполнения программы},label={lst:result}]
+    Carnivine Carnivine from the team Red enters the battle!
+    Igglybuff Iglybuff from the team Black enters the battle!
+    Carnivine Carnivine is using Crunch. The user crunches up the target with sharp fangs. This may also lower the target’s Defense stat.
+    Igglybuff Iglybuff loses 3 hit points.
 
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+    Carnivine Carnivine is paralyzed
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+    Igglybuff Iglybuff is paralyzed
+
+    Igglybuff Iglybuff misses
+
+    Igglybuff Iglybuff misses
+
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+
+
+    Igglybuff Iglybuff misses
+
+
+    Igglybuff Iglybuff misses
+
+    Igglybuff Iglybuff misses
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+
+    Igglybuff Iglybuff misses
+
+    Carnivine Carnivine is using Crunch. The user crunches up the target with sharp fangs. This may also lower the target’s Defense stat.
+    Critical hit!
+    Carnivine Carnivine loses 9 hit points.
+
+    Carnivine Carnivine is using Crunch. The user crunches up the target with sharp fangs. This may also lower the target’s Defense stat.
+    Critical hit!
+    Carnivine Carnivine loses 7 hit points.
+    Both pokemons faint.
+    Zorua Zorua from the team Red enters the battle!
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Igglybuff Iglybuff decreases speed.
+
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff misses
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Igglybuff Iglybuff decreases speed.
+
+
+    Zorua Zorua is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Igglybuff Iglybuff increases attack.
+
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff hits himself in confusion.
+    Igglybuff Iglybuff loses 5 hit points.
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff misses
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+    Zorua Zorua is paralyzed
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff hits himself in confusion.
+    Igglybuff Iglybuff loses 4 hit points.
+
+
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Igglybuff Iglybuff decreases speed.
+
+
+    Zorua Zorua misses
+
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Igglybuff Iglybuff decreases speed.
+
+
+    Zorua Zorua is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Igglybuff Iglybuff increases attack.
+
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff hits himself in confusion.
+    Igglybuff Iglybuff loses 4 hit points.
+    Igglybuff Iglybuff faints.
+    Jigglypuff Jigglypuff from the team Black enters the battle!
+    Zorua Zorua misses
+
+    Jigglypuff Jigglypuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Zorua Zorua misses
+
+    Jigglypuff Jigglypuff is using Hyper Voice. The user attacks by letting loose a horribly loud, resounding cry.
+    Zorua Zorua loses 10 hit points.
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Jigglypuff Jigglypuff decreases speed.
+
+    Jigglypuff Jigglypuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Zorua Zorua is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Zorua Zorua increases attack.
+
+    Zorua Zorua is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Zorua Zorua increases attack.
+
+    Jigglypuff Jigglypuff is using Hyper Voice. The user attacks by letting loose a horribly loud, resounding cry.
+    Critical hit!
+    Jigglypuff Jigglypuff loses 16 hit points.
+    Both pokemons faint.
+    Wigglytuff Wigglytuff from the team Black enters the battle!
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Wigglytuff Wigglytuff decreases speed.
+
+    Wigglytuff Wigglytuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Zorua Zorua decreases speed.
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Zorua Zorua decreases speed.
+
+    Wigglytuff Wigglytuff misses
+
+    Zorua Zorua hits himself in confusion.
+    Zorua Zorua loses 3 hit points.
+    Zorua Zorua faints.
+    Zoroark Zoroark from the team Red enters the battle!
+    Wigglytuff Wigglytuff misses
+
+    Zoroark Zoroark is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Wigglytuff Wigglytuff increases attack.
+
+    Wigglytuff Wigglytuff is using Hyper Voice. The user attacks by letting loose a horribly loud, resounding cry.
+    Critical hit!
+    Zoroark Zoroark loses 13 hit points.
+    Zoroark Zoroark faints.
+    Team Red loses its last Pokemon.
+    The team Black wins the battle!
+    \end{lstlisting}
 
     \Section{Вывод}
 % Вывод...
-    Во время выполнения лабораторной работы я изучил синтаксис языка \verb|Java|, встроенную библиотеку \verb|Math|, научислся работать со средством разработки Java (\verb|JDK|). Также в процессе выполения я научился рабоать с типами данных, классами, функциями, массивами и циклами. Полученные мною знания являются необходимой базой для дальнейшего изучения языка и разработки уже более комлпексных проектов.\\
-    Также во время работы над лабораторной, я научился работать с официальной документацией Oracle по встроенной библиотеке Math\cite{oracledocmath}, RandomGenerator\cite{oracledocrandom}, а также ознакомился с базовыми командами *NIX\cite{gnudoc} и Git\cite{gitdoc}.
+    Во время выполнения лабораторной работы я изучил принципы ООП, научился импортировать \verb|jar| файлы как библиотеки, научился расширять классы и рабоать с модификаторами доступа, ознакомился с системой сборки \verb|Gradle|, \verb|IDEA|. Также в процессе выполения я тесно работал с документацией\cite{sedoc} на библиотеку для покемонов и сторонними сайтами для поиска информации о покемонах (PokemonDB\cite{pokemondb}). Полученные мною знания являются необходимой базой для дальнейшего изучения языка и разработки уже более комлпексных проектов.\\
+    Помимо этого, я ознакомился с способами создания UML диаграм и сделал диаграмму на практике при помощи встроенных в IDE средств.
 % -- из biblist
     \newpage
 %<<<<<<<<<<<<<<<<<<<<<< КОД РАБОТЫ <<<<<<<<<<<<<<<<<<<<<<<<
