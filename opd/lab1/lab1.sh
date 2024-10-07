@@ -1,8 +1,13 @@
 #!/bin/bash
-chmod -R 777 lab0
+
+# remove folder
+chmod -R 777 ~/lab0
 rm -rf ~/lab0
+
+# create directories
 mkdir -p ~/lab0 ~/lab0/mudkip3 ~/lab0/sandslash0 ~/lab0/weezing1
 
+# add files and change permissions
 echo $'Тип диеты\tErgovore' > ~/lab0/electrode3 && chmod u=rw,g=w,o= ~/lab0/electrode3 
 echo $'Ходы\tBody Slam Bounce\nCounter Covet Double-Edge Endeavor Gravity Heal Bell Helping Hand\nHyper Voice Icy Wind Last Resort Magic Coat Mega Kick Mega Punch Mimic\nMud-Slap Pain Split Recycle Role Play Rollout Seismic Toss Shock Wave\nSleep Talk Snore Water Pulse Uproar' > ~/lab0/igglybuff7 && chmod 640 ~/lab0/igglybuff7
 echo $'Живет\tForest Grassland\nRainforest' > ~/lab0/leafeon5 && chmod u=r,go= ~/lab0/leafeon5
@@ -13,6 +18,7 @@ echo $'satk7 sdef=5 spd=4' > ~/lab0/mudkip3/mareep && chmod 006 ~/lab0/mudkip3/m
 echo $'Тип покемона\tDARK\nNONE' > ~/lab0/mudkip3/zorua && chmod 404 ~/lab0/mudkip3/zorua
 echo $'Развитые способности\tRegenerator' > ~/lab0/weezing1/tangela && chmod 664 ~/lab0/weezing1/tangela
 
+# create directories and change permissons
 mkdir -p ~/lab0/mudkip3/vulpix && chmod 755 ~/lab0/mudkip3/vulpix
 mkdir -p ~/lab0/sandslash0/houndoom && chmod u=rx,go=x ~/lab0/sandslash0/houndoom
 mkdir -p ~/lab0/sandslash0/rapidash && chmod 513 ~/lab0/sandslash0/rapidash
@@ -23,6 +29,7 @@ mkdir -p ~/lab0/weezing1/venipede && chmod a=wx ~/lab0/weezing1/venipede
 mkdir -p ~/lab0/weezing1/ducklett && chmod 357 ~/lab0/weezing1/ducklett
 mkdir -p ~/lab0/weezing1/magikarp && chmod u=rwx,g=rx,o=wx ~/lab0/weezing1/magikarp
 
+# change permissions for root directories
 chmod u=rx,g=rwx,o=wx ~/lab0/weezing1
 chmod 524 ~/lab0/sandslash0
 chmod 363 ~/lab0/mudkip3
