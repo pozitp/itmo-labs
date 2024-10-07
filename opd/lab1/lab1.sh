@@ -46,9 +46,9 @@ cp ~/lab0/leafeon5 ~/lab0/sandslash0/aipom/
 chmod u-w ~/lab0/sandslash0/aipom
 ln -f ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
 
-chmod u+r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
+chmod u+r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep ~/lab0/mudkip3/psyduckleafon
 wc -m ~/lab0/mudkip3/* | tail -1 | grep -Go '[0-9]*' 2>> /tmp/error_375301.log > /tmp/wc_375301.log
-chmod u-r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
+chmod u-r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep ~/lab0/mudkip3/psyduckleafon
 chmod u+r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
 ls -Rltr ~/lab0/ | grep "on" | tail -2 2> /dev/null
 chmod u-r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
