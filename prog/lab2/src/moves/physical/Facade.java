@@ -13,7 +13,7 @@ public class Facade extends PhysicalMove {
     @Override
     protected void applyOppDamage(Pokemon pokemon, double damage) {
         switch (pokemon.getCondition()) {
-            case Status.BURN, Status.POISON, Status.PARALYZE -> super.applyOppDamage(pokemon, damage * 2);
+            case BURN, POISON, PARALYZE -> super.applyOppDamage(pokemon, damage * 2);
             default -> super.applyOppDamage(pokemon, damage);
         }
     }
