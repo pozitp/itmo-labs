@@ -34,34 +34,42 @@ chmod u=rx,g=rwx,o=wx ~/lab0/weezing1
 chmod 524 ~/lab0/sandslash0
 chmod 363 ~/lab0/mudkip3
 
+
 ln -sf ~/lab0/mudkip3 ~/lab0/Copy_38
 ln -sf ~/lab0/leafon5 ~/lab0/mudkip3/psyduckleafon
+
 chmod u+r ~/lab0/mudkip3/mareep
 cat ~/lab0/mudkip3/mareep ~/lab0/mudkip3/psyduck > ~/lab0/igglybuff7_78
 chmod u-r ~/lab0/mudkip3/mareep
+
 cp -a ~/lab0/sandslash0/. ~/lab0/weezing1/venipede/
 cat ~/lab0/electrode3 > ~/lab0/mudkip3/accelgorelectrode
+
 chmod u+w ~/lab0/sandslash0/aipom
 cp ~/lab0/leafeon5 ~/lab0/sandslash0/aipom/
 chmod u-w ~/lab0/sandslash0/aipom
+
 ln -f ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
 
-chmod u+r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
-chmod u+x ~/lab0/leafon5
+chmod u+r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep ~/lab0/psyduckleafon
 wc -m ~/lab0/mudkip3/* | tail -1 | grep -Go '[0-9]*' 2>> /tmp/error_375301.log > /tmp/wc_375301.log
-chmod u-r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
-chmod u-x ~/lab0/leafon5
+chmod u-r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep ~/lab0/psyduckleafon
+
 chmod u+r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
 ls -Rltr ~/lab0/ | grep "on" | tail -2 2> /dev/null
 chmod u-r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
+
 chmod u+r ~/lab0/mudkip3/mareep 
 cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/mudkip3/zorua | grep -v 'r$' 2>> /tmp/error_375301.log
 chmod u-r ~/lab0/mudkip3/mareep
+
 chmod u+r ~/lab0/mudkip3
 grep -in "ck" ~/lab0/mudkip3/*
 chmod u-r ~/lab0/mudkip3
+
 find ~/lab0/ -type f -name "a*" -exec sh -c "wc -m $1 2>> /tmp/errror_375301.log" -- {} \;
 find ~/lab0/ -type f -name "p$" -exec sh -c "cat $1 | sort 2>> /tmp/error_375301.log" -- {} \;
+
 
 rm ~/lab0/leafeon5
 rm ~/lab0/mudkip3/glaceon
