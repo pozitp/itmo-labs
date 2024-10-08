@@ -64,7 +64,7 @@ cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/m
 chmod u-r ~/lab0/mudkip3/mareep
 
 chmod u+r ~/lab0/mudkip3
-grep -in "ck" ~/lab0/mudkip3/*
+find ~/lab0/mudkip3 -type f -name "ck" -exec sh -c "wc -m $1" -- {} \;
 chmod u-r ~/lab0/mudkip3
 
 find ~/lab0/ -type f -name "a*" -exec sh -c "wc -m $1 2>> /tmp/errror_375301.log" -- {} \;
