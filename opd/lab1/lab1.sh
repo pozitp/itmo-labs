@@ -67,8 +67,8 @@ chmod u+r ~/lab0/mudkip3
 grep -in "ck" ~/lab0/mudkip3/*
 chmod u-r ~/lab0/mudkip3
 
-find ~/lab0/ -type f -name "a*" -exec sh -c "wc -m $1 2>> /tmp/errror_375301.log" -- {} \;
-find ~/lab0/ -type f -name "p$" -exec sh -c "cat $1 | sort 2>> /tmp/error_375301.log" -- {} \;
+# find ~/lab0/ -type f -name "a*" -exec sh -c "wc -m $1 2>> /tmp/errror_375301.log" -- {} \;
+# find ~/lab0/ -type f -name "p$" -exec sh -c "cat $1 | sort 2>> /tmp/error_375301.log" -- {} \;
 
 
 # rm ~/lab0/leafeon5
