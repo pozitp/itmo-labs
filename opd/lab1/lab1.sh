@@ -36,7 +36,7 @@ chmod 363 ~/lab0/mudkip3
 
 
 ln -sf ~/lab0/mudkip3 ~/lab0/Copy_38
-ln -sf ~/lab0/leafon5 ~/lab0/mudkip3/psyduckleafon
+ln -sf ~/lab0/leafeon5 ~/lab0/mudkip3/psyduckleafeon
 
 chmod u+r ~/lab0/mudkip3/mareep
 cat ~/lab0/mudkip3/mareep ~/lab0/mudkip3/psyduck > ~/lab0/igglybuff7_78
@@ -52,7 +52,7 @@ chmod u-w ~/lab0/sandslash0/aipom
 ln -f ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
 
 chmod u+r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
-find ~/lab0/mudkip3 -type f -exec wc -m {} + 2>> /tmp/error_375301.log | tail -1 | grep -Go '[0-9]*' > /tmp/wc_375301.log
+wc -m ~/lab0/mudkip3/* | tail -1 | grep -Go '[0-9]*' 2>> /tmp/error_375301.log > /tmp/wc_375301.log
 chmod u-r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
 
 chmod u+r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
