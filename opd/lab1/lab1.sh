@@ -106,9 +106,9 @@ echo "[TASK 4] Completed"
 # 5. Выполнить удаление файлов и каталогов при помощи команд rm и rmdir согласно варианту задания.
 
 # Удалить файл leafeon5
-rm ~/lab0/leafeon5
+rm -f ~/lab0/leafeon5
 # Удалить файл lab0/mudkip3/glaceon
-rm ~/lab0/mudkip3/glaceon
+rm -f ~/lab0/mudkip3/glaceon
 # удалить символические ссылки Copy_*
 rm ~/lab0/Copy_*
 # удалить жесткие ссылки lab0/mudkip3/mareepigglybu*
