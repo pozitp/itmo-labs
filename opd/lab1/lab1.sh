@@ -52,23 +52,28 @@ chmod u-w ~/lab0/sandslash0/aipom
 ln -f ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
 
 chmod u+r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
-wc -m ~/lab0/mudkip3/* | tail -1 | grep -Go '[0-9]*' 2>> /tmp/error_375301.log > /tmp/wc_375301.log
+wc -m ~/lab0/mudkip3/* | tail -1 | grep -Go '[0-9]*' 
+# 2>> /tmp/error_375301.log > /tmp/wc_375301.log
 chmod u-r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
 
 chmod u+r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
-ls -Rltr ~/lab0/ | grep "on" | tail -2 2> /dev/null
+ls -Rltr ~/lab0/ | grep "on" | tail -2 
+# 2> /dev/null
 chmod u-r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
 
 chmod u+r ~/lab0/mudkip3/mareep 
-cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/mudkip3/zorua | grep -v 'r$' 2>> /tmp/error_375301.log
+cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/mudkip3/zorua | grep -v 'r$' 
+# 2>> /tmp/error_375301.log
 chmod u-r ~/lab0/mudkip3/mareep
 
 chmod u+r ~/lab0/mudkip3
 grep -in "ck" ~/lab0/mudkip3/*
 chmod u-r ~/lab0/mudkip3
 
-find ~/lab0/ -type f -name "a*" -exec sh -c "wc -m $1 2>> /tmp/errror_375301.log" -- {} \;
-find ~/lab0/ -type f -name "p$" -exec sh -c "cat $1 | sort 2>> /tmp/error_375301.log" -- {} \;
+find ~/lab0/ -type f -name "a*" -exec sh -c "wc -m $1" -- {} \;
+# 2>> /tmp/errror_375301.log
+find ~/lab0/ -type f -name "p$" -exec sh -c "cat $1 | sort" -- {} \;
+# 2>> /tmp/error_375301.log
 
 
 # rm ~/lab0/leafeon5
