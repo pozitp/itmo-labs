@@ -51,13 +51,9 @@ chmod u-w ~/lab0/sandslash0/aipom
 
 ln -f ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
 
-chmod u+rx ~/lab0/mudkip3
-chmod u+r ~/lab0/mudkip3/mareep
-
-wc -m ~/lab0/mudkip3/* | tail -1 | grep -Go '[0-9]*' 2>> /tmp/error_375301.log > /tmp/wc_375301.log
-
-chmod 363 ~/lab0/mudkip3
-chmod 006 ~/lab0/mudkip3/mareep
+chmod u+r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
+find ~/lab0/mudkip3 -type f -exec wc -m {} + 2>> /tmp/error_375301.log | tail -1 | grep -Go '[0-9]*' > /tmp/wc_375301.log
+chmod u-r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
 
 chmod u+r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
 ls -Rltr ~/lab0/ | grep "on" | tail -2 2> /dev/null
