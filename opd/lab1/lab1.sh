@@ -4,6 +4,7 @@
 chmod -R 777 ~/lab0
 rm -rf ~/lab0
 
+# task 1 & 2
 # create directories
 mkdir -p ~/lab0 ~/lab0/mudkip3 ~/lab0/sandslash0 ~/lab0/weezing1
 
@@ -29,14 +30,18 @@ mkdir -p ~/lab0/weezing1/venipede && chmod a=wx ~/lab0/weezing1/venipede
 mkdir -p ~/lab0/weezing1/ducklett && chmod 357 ~/lab0/weezing1/ducklett
 mkdir -p ~/lab0/weezing1/magikarp && chmod u=rwx,g=rx,o=wx ~/lab0/weezing1/magikarp
 
+echo "[TASK 1] Completed"
+
 # change permissions for root directories
 chmod u=rx,g=rwx,o=wx ~/lab0/weezing1
 chmod 524 ~/lab0/sandslash0
 chmod 363 ~/lab0/mudkip3
 
+echo "[TASK 2] Completed"
 
-ln -sf ~/lab0/mudkip3 ~/lab0/Copy_38
-ln -sf ~/lab0/leafeon5 ~/lab0/mudkip3/psyduckleafeon
+# task 3
+ln -s ~/lab0/mudkip3 ~/lab0/Copy_38
+ln -s ~/lab0/leafeon5 ~/lab0/mudkip3/psyduckleafeon
 
 chmod u+r ~/lab0/mudkip3/mareep
 cat ~/lab0/mudkip3/mareep ~/lab0/mudkip3/psyduck > ~/lab0/igglybuff7_78
@@ -49,8 +54,11 @@ chmod u+w ~/lab0/sandslash0/aipom
 cp ~/lab0/leafeon5 ~/lab0/sandslash0/aipom/
 chmod u-w ~/lab0/sandslash0/aipom
 
-ln -f ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
+ln ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
 
+echo "[TASK 3] Completed"
+
+# task 4
 chmod u+r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
 wc -m ~/lab0/mudkip3/* 2>> /tmp/error_375301.log | tail -1 | grep -Go '[0-9]*' > /tmp/wc_375301.log
 chmod u-r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
@@ -70,10 +78,14 @@ chmod u-r ~/lab0/mudkip3
 find ~/lab0/ -type f -name "a*" -exec wc -m {} + 2>&1 | sort -n
 find ~/lab0/ -type f -name "p$" -exec cat {} + 2>> /tmp/error_375301.log | sort 
 
+echo "[TASK 4] Completed"
 
-# rm ~/lab0/leafeon5
-# rm ~/lab0/mudkip3/glaceon
-# rm ~/lab0/Copy_*
-# rm ~/lab0/mudkip3/mareepigglybu*
-# rm -r ~/lab0/weezing1
-# rm -r ~/lab0/weezing1/larvesta
+# task 5
+rm -f ~/lab0/leafeon5
+rm -f ~/lab0/mudkip3/glaceon
+rm -f ~/lab0/Copy_*
+rm -f ~/lab0/mudkip3/mareepigglybu*
+rm -rf ~/lab0/weezing1
+rm -rf ~/lab0/weezing1/larvesta
+
+echo "[TASK 5] Completed"
