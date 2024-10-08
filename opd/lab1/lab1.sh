@@ -112,7 +112,7 @@ rm -f ~/lab0/mudkip3/glaceon
 # удалить символические ссылки Copy_*
 rm ~/lab0/Copy_*
 # удалить жесткие ссылки lab0/mudkip3/mareepigglybu*
-rm ~/lab0/mudkip3/mareepigglybu*
+find ~/lab0/mudkip3/ -name "mareepigglybu*" -exec rm {} \;
 # Удалить директорию weezing1
 chmod -R u+w ~/lab0/weezing1
 rm -r ~/lab0/weezing1
