@@ -1,24 +1,39 @@
 package ru.pozitp
 
-fun main(args: Array<String>) {
+import java.io.File
+
+fun main() {
     // r1 r2 i1 r3 i2 i3 i4
-    if (args.size != 1 || !Regex("[01]*").matches(args[0])) {
-        println("You should provide 7 bits and it should contain only 0 and 1!")
-        return
+    val intArr: MutableList<Int>
+    while (true) {
+        println("enter a message consisting of 7 digits 0 or 1, written without spaces:")
+        val input = readln()
+        if (input.length == 7 && Regex("[01]*").matches(input)) {
+            intArr = input.map { it.toString().toInt() }.toMutableList()
+            break
+        } else {
+            println("you must enter 7 bits containing only 0 and 1!")
+        }
     }
-    val charArr = args[0].toCharArray()
-    val intArr = charArr.map { it.toString().toInt() }.toIntArray()
 
     val s1 = (intArr[0] + intArr[2] + intArr[4] + intArr[6]) % 2
     val s2 = (intArr[1] + intArr[2] + intArr[5] + intArr[6]) % 2
     val s3 = (intArr[3] + intArr[4] + intArr[5] + intArr[6]) % 2
 
     val errPos = s1 + s2 * 2 + s3 * 4
-    if (errPos == 0) {
-        println("No errors")
-    } else {
-        println("Error in position $errPos")
-        intArr[errPos - 1] = intArr[errPos - 1] xor 1
-        println("Corrected message: ${intArr.joinToString("")}")
+
+    val bitType = when (errPos) {
+        0 -> "correct"
+        1 -> "r1"
+        2 -> "r2"
+        3 -> "i1"
+        4 -> "r3"
+        5 -> "i2"
+        6 -> "i3"
+        7 -> "i4"
+        else -> "unknown"
     }
+    println(bitType)
+
+    File("result.txt").writeText(bitType)
 }
