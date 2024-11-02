@@ -95,10 +95,10 @@ cat -n ~/lab0/mudkip3/* | grep -i "ck"
 #chmod u-r ~/lab0/mudkip3
 
 # Рекурсивно подсчитать количество символов содержимого файлов из директории lab0, имя которых начинается на 'a', отсортировать вывод по увеличению количества, добавить вывод ошибок доступа в стандартный поток вывода
-wc -m $(ls -1dp ~/lab0/a* ~/lab0/**/a* ~/lab0/**/**/a*) | grep -v /$ 2>&1
+wc -m $(ls -1dp ~/lab0/a* ~/lab0/**/a* ~/lab0/**/**/a* 2> /dev/null | grep -v /$ ) | grep -v /$ 2>&1
 
 # Рекурсивно вывести содержимое файлов из директории lab0, имя которых заканчивается на 'p', строки отсортировать по имени a->z, ошибки доступа перенаправить в файл в директории /tmp
-cat $(ls -1dp ~/lab0/*p ~/lab0/**/*p ~/lab0/**/**/*p) 2>> /tmp/error_375301.log
+cat $(ls -1dp ~/lab0/*p ~/lab0/**/*p ~/lab0/**/**/*p 2> /dev/null | grep -v /$) 2>> /tmp/error_375301.log
 
 echo "[TASK 4] Completed"
 
@@ -106,17 +106,17 @@ echo "[TASK 4] Completed"
 # 5. Выполнить удаление файлов и каталогов при помощи команд rm и rmdir согласно варианту задания.
 
 # Удалить файл leafeon5
-# rm -f ~/lab0/leafeon5
+rm -f ~/lab0/leafeon5
 # Удалить файл lab0/mudkip3/glaceon
-# rm -f ~/lab0/mudkip3/glaceon
+rm -f ~/lab0/mudkip3/glaceon
 # удалить символические ссылки Copy_*
-# rm ~/lab0/Copy_*
+rm ~/lab0/Copy_*
 # удалить жесткие ссылки lab0/mudkip3/mareepigglybu*
-# rm -f ~/lab0/mudkip3/mareepigglybu*
+rm -f ~/lab0/mudkip3/mareepigglybu*
 # Удалить директорию weezing1
-# chmod -R u+rwx ~/lab0/weezing1
-# rm -r ~/lab0/weezing1
+chmod -R u+rwx ~/lab0/weezing1
+rm -r ~/lab0/weezing1
 # Удалить директорию lab0/weezing1/larvesta
-# rm -r ~/lab0/weezing1/larvesta
+rm -r ~/lab0/weezing1/larvesta
 
 echo "[TASK 5] Completed"
