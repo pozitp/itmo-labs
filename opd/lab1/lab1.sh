@@ -114,7 +114,7 @@ rm ~/lab0/Copy_*
 # удалить жесткие ссылки lab0/mudkip3/mareepigglybu*
 rm -f ~/lab0/mudkip3/mareepigglybu*
 # Удалить директорию weezing1
-chmod -R u+wx ~/lab0/weezing1
+chmod -R u+rwx ~/lab0/weezing1
 rm -r ~/lab0/weezing1
 # Удалить директорию lab0/weezing1/larvesta
 rm -r ~/lab0/weezing1/larvesta
