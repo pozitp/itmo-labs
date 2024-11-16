@@ -53,18 +53,15 @@ ln -s ~/lab0/mudkip3 ~/lab0/Copy_38
 ln -s ~/lab0/leafeon5 ~/lab0/mudkip3/psyduckleafeon
 
 # объеденить содержимое файлов lab0/mudkip3/mareep, lab0/mudkip3/psyduck, в новый файл lab0/igglybuff7_78
-chmod u+r ~/lab0/mudkip3/mareep
 cat ~/lab0/mudkip3/mareep ~/lab0/mudkip3/psyduck > ~/lab0/igglybuff7_78
-chmod u-r ~/lab0/mudkip3/mareep
+
 # скопировать рекурсивно директорию sandslash0 в директорию lab0/weezing1/venipede
 cp -a ~/lab0/sandslash0/. ~/lab0/weezing1/venipede/
 # скопировать содержимое файла electrode3 в новый файл lab0/mudkip3/accelgorelectrode
 cat ~/lab0/electrode3 > ~/lab0/mudkip3/accelgorelectrode
 
 # скопировать файл leafeon5 в директорию lab0/sandslash0/aipom
-chmod u+w ~/lab0/sandslash0/aipom
 cp ~/lab0/leafeon5 ~/lab0/sandslash0/aipom/
-chmod u-w ~/lab0/sandslash0/aipom
 
 # cоздать жесткую ссылку для файла igglybuff7 с именем lab0/mudkip3/mareepigglybuff
 ln ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
@@ -75,24 +72,16 @@ echo "[TASK 3] Completed"
 # 4. Используя команды cat, wc, ls, head, tail, echo, sort, grep выполнить в соответствии с вариантом задания поиск и фильтрацию файлов, каталогов и содержащихся в них данных.
 
 # Подсчитать количество символов содержимого файлов в директории mudkip3, результат записать в файл в директории /tmp, ошибки доступа перенаправить в файл в директории /tmp
-#chmod u+r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
 wc -m ~/lab0/mudkip3/* 2>> /tmp/error_375301.log | tail -1 | grep -Go '[0-9]*' > /tmp/wc_375301.log
-#chmod u-r ~/lab0/mudkip3 ~/lab0/mudkip3/mareep
 
 # Вывести два последних элемента рекурсивного списка имен и атрибутов файлов в директории lab0, содержащих строку "on", список отсортировать по убыванию даты доступа к файлу, подавить вывод ошибок доступа
-#chmod u+r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
-ls -Rlt ~/lab0/ 2> /dev/null | grep "on" | tail -2 
-#chmod u-r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
+ls -Rlt ~/lab0/ 2> /dev/null | grep "on" | tail -2
 
 # Вывести содержимое файлов: psyduck, glaceon, mareep, zorua, исключить строки, заканчивающиеся на 'r', ошибки доступа перенаправить в файл в директории /tmp
-#chmod u+r ~/lab0/mudkip3/mareep 
-cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/mudkip3/zorua 2>> /tmp/error_375301.log | grep -v 'r$' 
-#chmod u-r ~/lab0/mudkip3/mareep
+cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/mudkip3/zorua 2>> /tmp/error_375301.log | grep -v 'r$'
 
 # Вывести содержимое файлов с номерами строк в директории mudkip3, оставить только строки, содержащие "ck", регистр символов игнорировать, ошибки доступа не подавлять и не перенаправлять
-#chmod u+r ~/lab0/mudkip3
 cat -n ~/lab0/mudkip3/* | grep -i "ck"
-#chmod u-r ~/lab0/mudkip3
 
 # Рекурсивно подсчитать количество символов содержимого файлов из директории lab0, имя которых начинается на 'a', отсортировать вывод по увеличению количества, добавить вывод ошибок доступа в стандартный поток вывода
 x=$(ls -1dp ~/lab0/a* ~/lab0/**/a* ~/lab0/**/**/a* 2> /dev/null | grep -v /$  | grep -v /$ | wc -m 2>&1)
@@ -116,7 +105,6 @@ rm ~/lab0/Copy_*
 # удалить жесткие ссылки lab0/mudkip3/mareepigglybu*
 rm -f ~/lab0/mudkip3/mareepigglybu*
 # Удалить директорию weezing1
-chmod -R u+rwx ~/lab0/weezing1
 rm -r ~/lab0/weezing1
 # Удалить директорию lab0/weezing1/larvesta
 rm -r ~/lab0/weezing1/larvesta

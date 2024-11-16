@@ -1,0 +1,7 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{Лабораторная работа\ № 1. Основы работы с файловой системой и управления правами доступа в Linux}{2}{chapter*.2}%
+\contentsline {section}{1. Задание варианта № 90019}{2}{section*.3}%
+\contentsline {section}{2. Выполнение задания.}{7}{section*.5}%
+\contentsline {subsection}{1. Листинги кода}{7}{section*.6}%
+\contentsline {section}{3. Результат работы программы.}{10}{section*.7}%
+\contentsline {section}{4. Вывод}{10}{section*.8}%
