@@ -85,8 +85,8 @@ ls -Rlt ~/lab0/ 2> /dev/null | grep "on" | tail -2
 #chmod u-r ~/lab0/weezing1/ducklett ~/lab0/mudkip3
 
 # Вывести содержимое файлов: psyduck, glaceon, mareep, zorua, исключить строки, заканчивающиеся на 'r', ошибки доступа перенаправить в файл в директории /tmp
-#chmod u+r ~/lab0/mudkip3/mareep 
-cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/mudkip3/zorua 2>> /tmp/error_375301.log | grep -v 'r$' 
+#chmod u+r ~/lab0/mudkip3/mareep
+cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/mudkip3/zorua 2>> /tmp/error_375301.log | grep -v 'r$'
 #chmod u-r ~/lab0/mudkip3/mareep
 
 # Вывести содержимое файлов с номерами строк в директории mudkip3, оставить только строки, содержащие "ck", регистр символов игнорировать, ошибки доступа не подавлять и не перенаправлять
@@ -119,6 +119,6 @@ rm -f ~/lab0/mudkip3/mareepigglybu*
 chmod -R u+rwx ~/lab0/weezing1
 rm -r ~/lab0/weezing1
 # Удалить директорию lab0/weezing1/larvesta
-rm -r ~/lab0/weezing1/larvesta
+rm -rf ~/lab0/weezing1/larvesta
 
 echo "[TASK 5] Completed"

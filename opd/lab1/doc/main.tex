@@ -163,9 +163,50 @@
 %    \newpage
     \Subsection{Листинги кода}
     Листинг из файла~\ref{lst:bash1}
-    \lstinputlisting[caption={Исходный код главного скрипта},label={lst:bash1},language=bash]{../lab1_errors.sh}
+    \lstinputlisting[caption={Первая версия главного скрипта},label={lst:bash1},language=bash]{../lab1_errors.sh}
 
-    Во время выполнения 
+    Во время певрого выполнения кода у меня возникли следующие ошибки
+    \begin{lstlisting}[caption={Первый запуск},label={lst:result1}]
+    ...
+    cat: /home/studs/s375301/lab0/mudkip3/mareep: Permission denied
+    cp: /home/studs/s375301/lab0/sandslash0/aipom/leafeon5: Permission denied
+    ...
+    override r-xrwx-wx s375301/studs uarch for /home/studs/s375301/lab0/weezing1? y
+    rm: /home/studs/s375301/lab0/weezing1/tangela: Permission denied
+    rm: /home/studs/s375301/lab0/weezing1/ducklett: Permission denied
+    rm: /home/studs/s375301/lab0/weezing1/magikarp: Permission denied
+    rm: /home/studs/s375301/lab0/weezing1/larvesta: Permission denied
+    override r-x-w-r-- s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede? y
+    override r-xrwx-wx s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/aipom? y
+    rm: /home/studs/s375301/lab0/weezing1/venipede/aipom: Permission denied
+    override r-x--x-wx s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/rapidash? y
+    rm: /home/studs/s375301/lab0/weezing1/venipede/rapidash: Permission denied
+    override r-x--x--x s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/houndoom? y
+    rm: /home/studs/s375301/lab0/weezing1/venipede/houndoom: Permission denied
+    override r-x------ s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/scraggy? y
+    rm: /home/studs/s375301/lab0/weezing1/venipede/scraggy: Permission denied
+    rm: /home/studs/s375301/lab0/weezing1/venipede: Permission denied
+    rm: /home/studs/s375301/lab0/weezing1: Directory not empty
+    rm: /home/studs/s375301/lab0/weezing1/larvesta: Permission denied
+    ...
+    \end{lstlisting}
+
+    Для их решения я добавил в код главного скрипта следующие пункты
+    \begin{lstlisting}[caption={Добавление изменения прав},label={lst:codeedit}]
+    chmod u+r ~/lab0/mudkip3/mareep
+    cat ~/lab0/mudkip3/mareep ~/lab0/mudkip3/psyduck > ~/lab0/igglybuff7_78
+    chmod u-r ~/lab0/mudkip3/mareep
+        ...
+    chmod u+w ~/lab0/sandslash0/aipom
+    cp ~/lab0/leafeon5 ~/lab0/sandslash0/aipom/
+    chmod u-w ~/lab0/sandslash0/aipom
+        ...
+    chmod -R u+rwx ~/lab0/weezing1
+    rm -r ~/lab0/weezing1
+        ...
+    \end{lstlisting}
+
+    Теперь скрипт выглядит так
 
     Листинг из файла~\ref{lst:bash}
     \lstinputlisting[caption={Исходный код главного скрипта},label={lst:bash},language=bash]{../lab1.sh}
