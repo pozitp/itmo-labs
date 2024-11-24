@@ -1,0 +1,50 @@
+<schedule>
+    <day>
+        <name>Понедельник</name>
+        <date>2024-11-25</date>
+        <lessons>
+            <lesson>
+                <subject>Информатика</subject>
+                <type>Лабораторные занятия</type>
+                <time_start>08:20</time_start>
+                <time_end>09:50</time_end>
+                <teacher>Рыбаков Степан Дмитриевич</teacher>
+                <room>2116</room>
+                <building>Кронверкский пр., д.49, лит.А</building>
+            </lesson>
+            <lesson>
+                <subject>Информатика</subject>
+                <type>Лабораторные занятия</type>
+                <time_start>10:00</time_start>
+                <time_end>11:30</time_end>
+                <teacher>Рыбаков Степан Дмитриевич</teacher>
+                <room>2116</room>
+                <building>Кронверкский пр., д.49, лит.А</building>
+            </lesson>
+        </lessons>
+    </day>
+    <day>
+        <name>Четверг</name>
+        <date>2024-11-28</date>
+        <lessons>
+            <lesson>
+                <subject>История российской науки и техники</subject>
+                <type>Практические занятия</type>
+                <time_start>11:40</time_start>
+                <time_end>13:10</time_end>
+                <teacher>Васильев Андрей Владимирович</teacher>
+                <room>2416</room>
+                <building>Кронверкский пр., д.49, лит.А</building>
+            </lesson>
+            <lesson>
+                <subject>История российской науки и техники</subject>
+                <type>Лекции</type>
+                <time_start>15:20</time_start>
+                <time_end>16:50</time_end>
+                <teacher>Васильев Андрей Владимирович</teacher>
+                <room>1405</room>
+                <building>Кронверкский пр., д.49, лит.А</building>
+            </lesson>
+        </lessons>
+    </day>
+</schedule>

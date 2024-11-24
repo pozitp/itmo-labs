@@ -1,0 +1,52 @@
+# IntelliJ IDEA
+/.idea/
+/*.iml
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build directories
+/build/
+/out/
+
+# Maven
+target/
+
+# Gradle
+.gradle/
+/build/
+
+# Eclipse
+.project
+.classpath
+.cproject
+.settings/
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+venv.bak/

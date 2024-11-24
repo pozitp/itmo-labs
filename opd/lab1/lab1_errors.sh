@@ -21,7 +21,7 @@ echo $'satk7 sdef=5 spd=4' > ~/lab0/mudkip3/mareep && chmod 006 ~/lab0/mudkip3/m
 echo $'Тип покемона\tDARK\nNONE' > ~/lab0/mudkip3/zorua && chmod 404 ~/lab0/mudkip3/zorua # zorua: права 404
 echo $'Развитые способности\tRegenerator' > ~/lab0/weezing1/tangela && chmod 664 ~/lab0/weezing1/tangela # tangela: права 664
 
-# create directories and change permissons
+# создаём файлы и меняем права
 mkdir -p ~/lab0/mudkip3/vulpix && chmod 755 ~/lab0/mudkip3/vulpix # vulpix: права 755
 # houndoom: владелец должен записывать директорию и переходить в нее; группа-владелец должна только переходить в директорию; остальные пользователи должны только переходить в директорию
 mkdir -p ~/lab0/sandslash0/houndoom && chmod u=rx,go=x ~/lab0/sandslash0/houndoom
@@ -37,7 +37,7 @@ mkdir -p ~/lab0/weezing1/magikarp && chmod u=rwx,g=rx,o=wx ~/lab0/weezing1/magik
 
 echo "[TASK 1] Completed"
 
-# change permissions for root directories
+# меняем права директориям
 chmod u=rx,g=rwx,o=wx ~/lab0/weezing1 # weezing1: r-xrwx-wx
 chmod 524 ~/lab0/sandslash0 # sandslash0: r-x-w-r--
 chmod 363 ~/lab0/mudkip3 # mudkip3: -wxrw--wx
@@ -68,6 +68,9 @@ ln ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
 
 echo "[TASK 3] Completed"
 
+ls -lR
+
+echo "[TREE] Completed"
 
 # 4. Используя команды cat, wc, ls, head, tail, echo, sort, grep выполнить в соответствии с вариантом задания поиск и фильтрацию файлов, каталогов и содержащихся в них данных.
 
@@ -83,13 +86,16 @@ cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/m
 # Вывести содержимое файлов с номерами строк в директории mudkip3, оставить только строки, содержащие "ck", регистр символов игнорировать, ошибки доступа не подавлять и не перенаправлять
 cat -n ~/lab0/mudkip3/* | grep -i "ck"
 
+shopt -s globstar
 # Рекурсивно подсчитать количество символов содержимого файлов из директории lab0, имя которых начинается на 'a', отсортировать вывод по увеличению количества, добавить вывод ошибок доступа в стандартный поток вывода
-x=$(ls -1dp ~/lab0/a* ~/lab0/**/a* ~/lab0/**/**/a* 2> /dev/null | grep -v /$  | grep -v /$ | wc -m 2>&1)
+x=$(ls -1dp ~/lab0/**/a* 2> /dev/null | grep -v /$  | grep -v /$ | wc -m 2>&1)
 echo "$x"
 
 # Рекурсивно вывести содержимое файлов из директории lab0, имя которых заканчивается на 'p', строки отсортировать по имени a->z, ошибки доступа перенаправить в файл в директории /tmp
-x=$(ls -1dp ~/lab0/*p ~/lab0/**/*p ~/lab0/**/**/*p 2> /dev/null | grep -v /$ | cat 2>> /tmp/error_375301.log)
+x=$(ls -1dp ~/lab0/**/*p 2> /dev/null | grep -v /$ | cat 2>> /tmp/error_375301.log)
 echo "$x"
+
+shopt -u globstar
 
 echo "[TASK 4] Completed"
 
@@ -97,13 +103,13 @@ echo "[TASK 4] Completed"
 # 5. Выполнить удаление файлов и каталогов при помощи команд rm и rmdir согласно варианту задания.
 
 # Удалить файл leafeon5
-rm -f ~/lab0/leafeon5
+rm ~/lab0/leafeon5
 # Удалить файл lab0/mudkip3/glaceon
-rm -f ~/lab0/mudkip3/glaceon
+rm ~/lab0/mudkip3/glaceon
 # удалить символические ссылки Copy_*
 rm ~/lab0/Copy_*
 # удалить жесткие ссылки lab0/mudkip3/mareepigglybu*
-rm -f ~/lab0/mudkip3/mareepigglybu*
+rm ~/lab0/mudkip3/mareepigglybu*
 # Удалить директорию weezing1
 rm -r ~/lab0/weezing1
 # Удалить директорию lab0/weezing1/larvesta

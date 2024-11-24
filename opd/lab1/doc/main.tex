@@ -166,25 +166,28 @@
     \lstinputlisting[caption={Первая версия главного скрипта},label={lst:bash1},language=bash]{../lab1_errors.sh}
 
     Во время певрого выполнения кода у меня возникли следующие ошибки
-    \begin{lstlisting}[caption={Первый запуск},label={lst:result1}]
+    \begin{lstlisting}[caption={Ошибки при первом запуске},label={lst:result1}]
     ...
     cat: /home/studs/s375301/lab0/mudkip3/mareep: Permission denied
     cp: /home/studs/s375301/lab0/sandslash0/aipom/leafeon5: Permission denied
     ...
+    override r-------- s375301/studs uarch for /home/studs/s375301/lab0/leafeon5? y
+    override r-----r-- s375301/studs uarch for /home/studs/s375301/lab0/mudkip3/glaceon? y
+    rm: /home/studs/s375301/lab0/mudkip3/mareepigglybu*: No such file or directory
     override r-xrwx-wx s375301/studs uarch for /home/studs/s375301/lab0/weezing1? y
+    rm: /home/studs/s375301/lab0/weezing1/magikarp: Permission denied
     rm: /home/studs/s375301/lab0/weezing1/tangela: Permission denied
     rm: /home/studs/s375301/lab0/weezing1/ducklett: Permission denied
-    rm: /home/studs/s375301/lab0/weezing1/magikarp: Permission denied
     rm: /home/studs/s375301/lab0/weezing1/larvesta: Permission denied
     override r-x-w-r-- s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede? y
-    override r-xrwx-wx s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/aipom? y
-    rm: /home/studs/s375301/lab0/weezing1/venipede/aipom: Permission denied
-    override r-x--x-wx s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/rapidash? y
-    rm: /home/studs/s375301/lab0/weezing1/venipede/rapidash: Permission denied
     override r-x--x--x s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/houndoom? y
     rm: /home/studs/s375301/lab0/weezing1/venipede/houndoom: Permission denied
+    override r-x--x-wx s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/rapidash? y
+    rm: /home/studs/s375301/lab0/weezing1/venipede/rapidash: Permission denied
     override r-x------ s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/scraggy? y
     rm: /home/studs/s375301/lab0/weezing1/venipede/scraggy: Permission denied
+    override r-xrwx-wx s375301/studs uarch for /home/studs/s375301/lab0/weezing1/venipede/aipom? y
+    rm: /home/studs/s375301/lab0/weezing1/venipede/aipom: Permission denied
     rm: /home/studs/s375301/lab0/weezing1/venipede: Permission denied
     rm: /home/studs/s375301/lab0/weezing1: Directory not empty
     rm: /home/studs/s375301/lab0/weezing1/larvesta: Permission denied
@@ -204,9 +207,24 @@
     chmod -R u+rwx ~/lab0/weezing1
     rm -r ~/lab0/weezing1
         ...
+    rm -f ~/lab0/leafeon5
+    rm -f ~/lab0/mudkip3/glaceon
+    rm -f ~/lab0/mudkip3/mareepigglybu*
+
     \end{lstlisting}
 
-    Теперь скрипт выглядит так
+    После чего исчезли ошибки выше, но появилась
+
+    \begin{lstlisting}[caption={Ошибки при выполнении},label={lst:codeedit2}]
+            rm: /home/studs/s375301/lab0/weezing1/larvesta: No such file or directory
+    \end{lstlisting}
+
+    Для её решения я поменял флаги в команде rm, и ошибка ушла
+    \begin{lstlisting}[caption={Добавление force флага},label={lst:codeedit3}]
+    rm -rf ~/lab0/weezing1/larvesta
+    \end{lstlisting}
+
+    Итоговый скрипт выглядит так:
 
     Листинг из файла~\ref{lst:bash}
     \lstinputlisting[caption={Исходный код главного скрипта},label={lst:bash},language=bash]{../lab1.sh}
@@ -238,12 +256,26 @@
     \Section{Результат работы программы.}
 %    \Subsection{Первый запуск.}
     \begin{lstlisting}[caption={Результат выполнения программы},label={lst:result}]
-гойда
+[TASK 1] Completed
+[TASK 2] Completed
+[TASK 3] Completed
+-r--------  1 s375301 studs  39 16 нояб. 14:20 leafeon5
+-r--------  1 s375301 studs 39 16 нояб. 14:20 leafeon5
+Способности	Torrent Damp Cloud Nine
+Живет
+Taiga Tundra
+Тип покемона	DARK
+NONE
+cat: /home/studs/s375301/lab0/mudkip3/*: No such file or directory
+       0
+
+[TASK 4] Completed
+[TASK 5] Completed
     \end{lstlisting}
 
     \Section{Вывод}
 % Вывод...
-    Во время выполненния лабораторный работы я освоил базовые команды работы с файловой системой, базовый инструментарий командной оболочки и изучил права доступа в Linux. Также в процессе выполнения я тесно работал с командой man, с документацией на Archwiki и Gentoo wiki. Полученные мною знания являются необходимым минимумом для дальнейшего изучения GNU/Linux и выполнения более сложных действий.
+    Во время выполненния лабораторный работы я освоил базовые команды работы с файловой системой, базовый инструментарий командной оболочки и изучил права доступа. Также в процессе выполнения я тесно работал с командой man, с документацией на ArchWiki\cite{archwiki} и GentooWiki\cite{gentoowiki}. Полученные мною знания являются необходимым минимумом для дальнейшего обучения и выполнения более сложных действий.
 % -- из biblist
     \newpage
 %<<<<<<<<<<<<<<<<<<<<<< КОД РАБОТЫ <<<<<<<<<<<<<<<<<<<<<<<<
