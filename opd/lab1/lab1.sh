@@ -98,7 +98,6 @@ cat ~/lab0/mudkip3/psyduck ~/lab0/mudkip3/glaceon ~/lab0/mudkip3/mareep ~/lab0/m
 cat -n ~/lab0/mudkip3/* | grep -i "ck"
 #chmod u-r ~/lab0/mudkip3
 
-shopt -s globstar
 # Рекурсивно подсчитать количество символов содержимого файлов из директории lab0, имя которых начинается на 'a', отсортировать вывод по увеличению количества, добавить вывод ошибок доступа в стандартный поток вывода
 x=$(ls -1dp ~/lab0/**/a* 2> /dev/null | grep -v /$  | grep -v /$ | wc -m 2>&1)
 echo "$x"
@@ -106,8 +105,6 @@ echo "$x"
 # Рекурсивно вывести содержимое файлов из директории lab0, имя которых заканчивается на 'p', строки отсортировать по имени a->z, ошибки доступа перенаправить в файл в директории /tmp
 x=$(ls -1dp ~/lab0/**/*p 2> /dev/null | grep -v /$ | cat 2>> /tmp/error_375301.log)
 echo "$x"
-
-shopt -u globstar
 
 echo "[TASK 4] Completed"
 
