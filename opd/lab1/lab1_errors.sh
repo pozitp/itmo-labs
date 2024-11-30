@@ -68,7 +68,7 @@ ln ~/lab0/igglybuff7 ~/lab0/mudkip3/mareepigglybuff
 
 echo "[TASK 3] Completed"
 
-ls -lR
+ls -lR ~/lab0
 
 echo "[TREE] Completed"
 
