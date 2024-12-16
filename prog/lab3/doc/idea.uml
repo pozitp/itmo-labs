@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/pozitp/Documents/itmo-labs/prog/lab3/src</OriginalElement>
+  <nodes>
+    <node x="-23.0" y="128.0">model.objects.ShoeType</node>
+    <node x="300.5" y="-68.0">model.abstracted.Character</node>
+    <node x="527.5" y="1152.0">model.WandStory</node>
+    <node x="425.5" y="912.0">model.exceptions.StoryException</node>
+    <node x="285.0" y="291.0">model.abstracted.Person</node>
+    <node x="733.5" y="900.0">model.abstracted.Story</node>
+    <node x="541.0" y="672.0">model.exceptions.CharacterNotFoundException</node>
+    <node x="65.0" y="864.0">model.Knopochka</node>
+    <node x="-141.0" y="1501.0">Main</node>
+    <node x="-112.5" y="340.0">model.objects.Buckle</node>
+    <node x="-117.0" y="1352.0">Starter</node>
+    <node x="-139.5" y="912.0">model.objects.Shoes</node>
+    <node x="234.0" y="599.0">model.Neznaika</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Starter" target="model.Neznaika" relationship="CREATE">
+      <point x="59.0" y="0.0" />
+      <point x="342.0" y="1396.0" />
+      <point x="0.0" y="117.0" />
+    </edge>
+    <edge source="model.abstracted.Story" target="model.abstracted.Person" relationship="TO_MANY">
+      <point x="0.0" y="-56.0" />
+      <point x="842.0" y="396.0" />
+      <point x="97.0" y="0.0" />
+    </edge>
+    <edge source="model.WandStory" target="model.objects.Shoes" relationship="TO_ONE">
+      <point x="-154.5" y="0.0" />
+      <point x="-28.0" y="1196.0" />
+      <point x="30.0" y="44.0" />
+    </edge>
+    <edge source="model.abstracted.Person" target="model.abstracted.Character" relationship="REALIZATION">
+      <point x="0.0" y="-105.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="Starter" target="model.WandStory" relationship="CREATE">
+      <point x="59.0" y="15.0" />
+      <point x="682.0" y="1411.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="model.WandStory" target="model.exceptions.StoryException" relationship="CREATE">
+      <point x="-147.0" y="-44.0" />
+      <point x="13.0" y="44.0" />
+    </edge>
+    <edge source="model.objects.Shoes" target="model.objects.Buckle" relationship="TO_ONE">
+      <point x="35.0" y="-44.0" />
+      <point x="15.0" y="56.0" />
+    </edge>
+    <edge source="Starter" target="model.objects.Shoes" relationship="CREATE">
+      <point x="0.0" y="-44.0" />
+      <point x="0.0" y="44.0" />
+    </edge>
+    <edge source="model.objects.Shoes" target="model.objects.Buckle" relationship="CREATE">
+      <point x="20.0" y="-44.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="model.WandStory" target="model.Knopochka" relationship="TO_ONE">
+      <point x="-154.5" y="-15.0" />
+      <point x="162.0" y="1181.0" />
+      <point x="0.0" y="92.0" />
+    </edge>
+    <edge source="model.Knopochka" target="model.abstracted.Person" relationship="GENERALIZATION">
+      <point x="0.0" y="-92.0" />
+      <point x="162.0" y="552.0" />
+      <point x="211.0" y="552.0" />
+      <point x="211.0" y="396.0" />
+      <point x="-97.0" y="0.0" />
+    </edge>
+    <edge source="model.WandStory" target="model.Neznaika" relationship="TO_ONE">
+      <point x="0.0" y="-44.0" />
+      <point x="682.0" y="777.5" />
+      <point x="108.0" y="61.5" />
+    </edge>
+    <edge source="model.objects.Shoes" target="model.objects.ShoeType" relationship="TO_ONE">
+      <point x="-72.0" y="-44.0" />
+      <point x="-130.0" y="196.0" />
+      <point x="-105.0" y="0.0" />
+    </edge>
+    <edge source="model.Neznaika" target="model.abstracted.Person" relationship="GENERALIZATION">
+      <point x="-108.0" y="0.0" />
+      <point x="211.0" y="716.0" />
+      <point x="211.0" y="396.0" />
+      <point x="-97.0" y="0.0" />
+    </edge>
+    <edge source="model.WandStory" target="model.exceptions.CharacterNotFoundException" relationship="CREATE">
+      <point x="15.0" y="-44.0" />
+      <point x="15.0" y="44.0" />
+    </edge>
+    <edge source="Starter" target="model.Knopochka" relationship="CREATE">
+      <point x="59.0" y="-15.0" />
+      <point x="147.0" y="1381.0" />
+      <point x="-15.0" y="92.0" />
+    </edge>
+    <edge source="model.WandStory" target="model.abstracted.Story" relationship="GENERALIZATION">
+      <point x="147.0" y="-44.0" />
+      <point x="-13.0" y="56.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.8735222687592378" showDependencies="true" x="277.4749234560103" y="366.4479970030377" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

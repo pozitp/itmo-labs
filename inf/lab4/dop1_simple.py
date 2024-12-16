@@ -1,4 +1,9 @@
-import xmltodict, json
+import xmltodict
+import json
 
-o = xmltodict.parse(open("./input.xml", "r").read())
-print(json.dumps(o)) # '{"e": {"a": ["text", "text"]}}'
+with open("./input.xml", "r", encoding='utf-8') as xml_file:
+    o = xmltodict.parse(xml_file.read())
+
+
+with open("./output_dop1.json", "w", encoding='utf-8') as f:
+    json.dump(o, f, indent=4, ensure_ascii=False)

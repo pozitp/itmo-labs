@@ -1,0 +1,96 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+entity Buckle << record >> {
+  + Buckle(String): 
+  + toString(): String
+  + shape(): String
+}
+interface Character << interface >> {
+  + speak(String): void
+   name: String
+}
+class CharacterNotFoundException {
+  + CharacterNotFoundException(String): 
+   message: String
+}
+class Knopochka {
+  + Knopochka(): 
+  + speak(String): void
+  + equals(Object): boolean
+  + giveAdvide(): void
+  + hashCode(): int
+  + toString(): String
+}
+class Main {
+  + Main(): 
+  + main(String[]): void
+}
+class Neznaika {
+  + Neznaika(): 
+  - isWishingForWand: boolean
+  + lookAt(Object): void
+  + speak(String): void
+  + wave(): void
+  + hashCode(): int
+  + toString(): String
+   isWishingForWand: boolean
+}
+class Person {
+  + Person(String): 
+  # name: String
+  + toString(): String
+  + speak(String): void
+  + equals(Object): boolean
+  + hashCode(): int
+   name: String
+}
+enum ShoeType << enumeration >> {
+  - ShoeType(String): 
+  + values(): ShoeType[]
+  + valueOf(String): ShoeType
+  + toString(): String
+}
+class Shoes {
+  + Shoes(ShoeType): 
+  + toString(): String
+}
+class Starter {
+  + Starter(): 
+  + start(): void
+}
+class Story {
+  + Story(): 
+  + addCharacter(Person): void
+  + tell(): void
+}
+class StoryException {
+  + StoryException(String): 
+   message: String
+}
+class WandStory {
+  + WandStory(Neznaika, Knopochka, Shoes): 
+  + tell(): void
+}
+
+Knopochka                   -[#000082,plain]-^  Person                     
+Neznaika                    -[#000082,plain]-^  Person                     
+Person                      -[#008200,dashed]-^  Character                  
+Shoes                       -[#595959,dashed]->  Buckle                     : "«create»"
+Shoes                      "1" *-[#595959,plain]-> "buckle\n1" Buckle                     
+Shoes                      "1" *-[#595959,plain]-> "color\n1" ShoeType                   
+Starter                     -[#595959,dashed]->  Knopochka                  : "«create»"
+Starter                     -[#595959,dashed]->  Neznaika                   : "«create»"
+Starter                     -[#595959,dashed]->  Shoes                      : "«create»"
+Starter                     -[#595959,dashed]->  WandStory                  : "«create»"
+Story                      "1" *-[#595959,plain]-> "characters\n*" Person                     
+WandStory                   -[#595959,dashed]->  CharacterNotFoundException : "«create»"
+WandStory                  "1" *-[#595959,plain]-> "knopochka\n1" Knopochka                  
+WandStory                  "1" *-[#595959,plain]-> "neznaika\n1" Neznaika                   
+WandStory                  "1" *-[#595959,plain]-> "shoes\n1" Shoes                      
+WandStory                   -[#000082,plain]-^  Story                      
+WandStory                   -[#595959,dashed]->  StoryException             : "«create»"
+@enduml

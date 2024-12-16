@@ -1,8 +1,9 @@
-class SimpleXMLToJSON:
+class SimpleXMLToCSV:
     def __init__(self):
         self.pos = 0
         self.xml = ""
-
+        
+    # Проверка на то, что следующий символ - это начало тега
     def is_valid_tag_start(self):
         if self.pos + 1 >= len(self.xml):
             return False
@@ -20,7 +21,6 @@ class SimpleXMLToJSON:
         return content.strip()
 
     def parse_attributes(self, tag_text):
-        # Split tag text into name and attributes part
         parts = tag_text.split(None, 1)
         tag_name = parts[0]
         attributes = {}
@@ -28,12 +28,10 @@ class SimpleXMLToJSON:
         if len(parts) > 1:
             attr_text = parts[1]
             while attr_text:
-                # Skip whitespace
                 attr_text = attr_text.lstrip()
                 if not attr_text:
                     break
                     
-                # Find attribute name
                 equals_pos = attr_text.find('=')
                 if equals_pos == -1:
                     break
@@ -41,7 +39,6 @@ class SimpleXMLToJSON:
                 attr_name = attr_text[:equals_pos].strip()
                 attr_text = attr_text[equals_pos + 1:].lstrip()
                 
-                # Find attribute value
                 quote = attr_text[0]
                 if quote not in '"\'':
                     break
@@ -58,12 +55,12 @@ class SimpleXMLToJSON:
 
     def parse_tag(self):
         tag = ""
-        self.pos += 1  # skip <
+        self.pos += 1  # пропуск <
         while self.pos < len(self.xml) and self.xml[self.pos] != '>':
             tag += self.xml[self.pos]
             self.pos += 1
         if self.pos < len(self.xml):
-            self.pos += 1  # skip >
+            self.pos += 1  # пропуск >
         return self.parse_attributes(tag.strip())
 
     def parse_element(self):
@@ -105,11 +102,9 @@ class SimpleXMLToJSON:
 
         result = {tag_name: {}}
         
-        # Add attributes under @attributes field if present
         if attributes:
             result[tag_name]["@attributes"] = attributes
 
-        # Add children elements
         if len(children) == 1 and isinstance(children[0], str):
             if attributes:
                 result[tag_name]["_text"] = children[0]
@@ -128,23 +123,49 @@ class SimpleXMLToJSON:
 
         return result
 
-    def format_json(self, obj, level=0):
-        indent = "    " * level
+    def escape_csv_field(self, field):
+        if not field:
+            return ''
+        field = str(field)
+        if ',' in field or '"' in field or '\n' in field:
+            return f'"{field.replace("`", "``")}"'
+        return field
+
+    def format_csv(self, data):
+        rows = []
+        headers = ['Day', 'Subject', 'Type', 'Start Time', 'End Time', 'Teacher', 'Room', 'Building']
+        rows.append(','.join(headers))
+
+        # Ищем нужный элемент в словаре
+        schedule = data.get('schedule', {})
+        days = schedule.get('day', [])
         
-        if isinstance(obj, dict):
-            items = []
-            for k, v in obj.items():
-                items.append(f'{indent}    "{k}": {self.format_json(v, level + 1)}')
-            return "{\n" + ",\n".join(items) + f"\n{indent}}}"
+        # Проверка на случай, если день один
+        if not isinstance(days, list):
+            days = [days]
+            
+        for day in days:
+            day_name = day.get('@attributes', {}).get('name', '')
+            lessons = day.get('lesson', [])
+            
+            # Проверка на случай, если урок один
+            if not isinstance(lessons, list):
+                lessons = [lessons]
+                
+            for lesson in lessons:
+                row = [
+                    day_name,
+                    lesson.get('subject', ''),
+                    lesson.get('type', ''),
+                    lesson.get('time', {}).get('start', ''),
+                    lesson.get('time', {}).get('end', ''),
+                    lesson.get('teacher', ''),
+                    lesson.get('room', ''),
+                    lesson.get('building', '')
+                ]
+                rows.append(','.join(self.escape_csv_field(field) for field in row))
         
-        elif isinstance(obj, list):
-            items = [self.format_json(item, level + 1) for item in obj]
-            return "[\n" + ",\n".join(f"{indent}    {item}" for item in items) + f"\n{indent}]"
-        
-        elif isinstance(obj, str):
-            return f'"{obj}"'
-        
-        return str(obj)
+        return '\n'.join(rows)
 
     def convert_file(self, input_file, output_file):
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -154,8 +175,8 @@ class SimpleXMLToJSON:
         result = self.parse_element()
         
         with open(output_file, 'w', encoding='utf-8') as f:
-            f.write(self.format_json(result))
+            f.write(self.format_csv(result))
 
-# Usage
-converter = SimpleXMLToJSON()
-converter.convert_file('input.xml', 'output.json')
+
+converter = SimpleXMLToCSV()
+converter.convert_file('input.xml', 'output.csv')

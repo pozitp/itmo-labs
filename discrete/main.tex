@@ -1,0 +1,383 @@
+\usepackage{wasysym}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LAB-5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%>>>>>>>>>>>>>>>>>>>>>>>>>> ПЕРЕМЕННЫЕ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+%>>>>> Информация о кафедре
+%\newcommand{\year}{2021 г.}  % Год устанавливается автоматически
+\newcommand{\city}{Санкт-Петербург}  %  Футер, нижний колонтитул на титульном листе
+\newcommand{\university}{Национальный исследовательский университет ИТМО}  % первая строка
+\newcommand{\department}{Факультет программной инженерии и компьютерной техники}  % Вторая строка
+\newcommand{\major}{Направление программная инженерия}  % Треьтя строка
+% Пусть будет. Проще закоментить лишнее.
+\newcommand{\education}{Образовательная программа системное и прикладное программное обеспечение}  % четвертая строка
+%\newcommand{\specialization}{}  % пятая строка
+
+%<<<<< Информация о кафедре
+%Ашч
+%>>>>> Назание работы
+\newcommand{\reporttype}{ДОМАШНЯЯ РАБОТА} % тип работы, (главный заголовок титульного листа)
+\newcommand{\lab}{Домашняя работа}          % вид работы
+\newcommand{\labnumber}{№ 1}                    % порядковый номер работы
+\newcommand{\subject}{Дискретная математика}         % учебный предмет
+\newcommand{\labtheme}{Представление чисел с фиксированной и плавающей запятой в различных форматах}            % Тема лабораторной работы
+\newcommand{\variant}{№ 117}                % номер варианта работы
+\newcommand{\student}{Мухамедьяров Артур Альбертович}    % определение ФИО студента
+\newcommand{\studygroup}{P3109}                 % определение учебной группы
+\newcommand{\teacher}{% принимающий
+    Поляков В. И.
+}
+%<<<<<<<<<<<<<<<<<<<<<<<<<< ПЕРЕМЕННЫЕ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+%>>>>>>>>>>>>>>>>>>>>>> ПРЕАМБУЛА >>>>>>>>>>>>>>>>>>>>>>>>>
+\include{preamble}
+%<<<<<<<<<<<<<<<<<<<<<< ПРЕАМБУЛА <<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+%%%%%%%%%%%%%%%%%%% СОДЕРЖИМОЕ ОТЧЕТА %%%%%%%%%%%%%%%%%%%%%
+%>>>>>>>>>>>>>>> ''''''''''''''''''''''' >>>>>>>>>>>>>>>>>>
+\begin{document}
+
+
+%>>>>>>>>>>>>>>>> ОПРЕДЕЛЕНИЕ НАЗВАНИЙ >>>>>>>>>>>>>>>>>>>>
+% Переоформление некоторых стандартных названий
+%\renewcommand{\chaptername}{Лабораторная работа}
+    \renewcommand{\chaptername}{\lab\ \labnumber} % переименование глав
+    \renewcommand{\contentsname}{Содержание} % переименование оглавления
+%<<<<<<<<<<<<<<<< ОПРЕДЕЛЕНИЕ НАЗВАНИЙ <<<<<<<<<<<<<<<<<<<<
+% \setlength{\itemsep}{0pt} % установка расстояния между строчками в списках можно использовать локально внутри списка списке
+% \setlength{\parskip}{0pt} % 
+% \setlength{\parsep}{0pt}  % 
+
+%>>>>>>>>>>>>>>>>> ТИТУЛЬНАЯ СТРАНИЦА >>>>>>>>>>>>>>>>>>>>>
+    \include{titlepage}
+%<<<<<<<<<<<<<<<<< ТИТУЛЬНАЯ СТРАНИЦА <<<<<<<<<<<<<<<<<<<<<
+
+
+%>>>>>>>>>>>>>>>>>>>>> СОДЕРЖАНИЕ >>>>>>>>>>>>>>>>>>>>>>>>>
+% Содержание
+    \tableofcontents
+%<<<<<<<<<<<<<<<<<<<<< СОДЕРЖАНИЕ <<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+%%%%%%%%%%%%%%%%%%%%%%% КОД РАБОТЫ %%%%%%%%%%%%%%%%%%%%%%%%
+%>>>>>>>>>>>>>>>>>>>'''''''''''''''''>>>>>>>>>>>>>>>>>>>>>
+    \newpage
+    \Chapter{\lab\ \labnumber}{\labtheme}{}
+
+    \Section{Задание варианта \variant}
+
+%    \begin{center}
+%        , , ,
+%    \end{center}
+%    \noindent
+%    \textbf{
+%    % Заглавное описание....:
+%        Заголовок
+%    }
+%
+%    \textit{
+%    % Описание задания...
+%        Описание
+%    }
+    На основе базового класса \verb|Pokemon| написать свои классы для заданных видов покемонов.
+    Каждый вид покемона должен иметь один или два типа и стандартные базовые характеристики:
+    \begin{itemize}
+        \item очки здоровья (HP)
+        \item атака (attack)
+        \item защита (defense)
+        \item специальная атака (special attack)
+        \item специальная защита (special defense)
+        \item скорость (speed)
+    \end{itemize}
+
+    Классы покемонов должны наследоваться в соответствии с цепочкой эволюции покемонов.
+    На основе базовых классов \verb|PhysicalMove|,\verb|SpecialMove| и \verb|StatusMove| реализовать свои классы для заданных видов атак.
+
+    Атака должна иметь стандартные тип, силу (power) и точность (accuracy).
+    Должны быть реализованы стандартные эффекты атаки.
+    Назначить каждому виду покемонов атаки в соответствии с вариантом.
+    Уровень покемона выбирается минимально необходимым для всех реализованных атак.
+
+    Используя класс симуляции боя \verb|Battle|, создать 2 команды покемонов (каждый покемон должен иметь имя) и запустить бой.
+
+    Базовые классы и симулятор сражения находятся в \href{https://se.ifmo.ru/documents/10180/660917/Pokemon.jar/a7ce60af-6ee6-47d0-a95e-e5ed9a697bd2}{jar-архиве}(обновлен 9.10.2018, исправлен баг с добавлением атак и кодировкой).
+    Документация в формате javadoc - \href{https://se.ifmo.ru/~tony/doc/}{здесь}.
+
+    Информацию о покемонах, цепочках эволюции и атаках можно найти на сайтах \href{https://poke-universe.ru/}{https://poke-universe.ru}, \href{https://pokemondb.net/}{https://pokemondb.net},\href{https://veekun.com/dex/pokemon}{https://veekun.com/dex/pokemon}
+
+    \subsubsection*{Комментарии}
+    Цель работы: на простом примере разобраться с основными концепциями ООП и научиться использовать их в программах.
+
+    Что надо сделать (краткое описание)
+
+    \begin{enumerate}
+        \setlength{\itemsep}{0pt} % Сокращение межстрочных расстояний
+        \setlength{\parskip}{0pt}
+        \setlength{\parsep}{0pt}
+        \item Ознакомиться с \href{https://se.ifmo.ru/~tony/doc/}{документацией}, обращая особое внимание на классы \verb|Pokemon| и \verb|Move|.
+        При дальнейшем выполнении лабораторной работы читать документацию еще несколько раз.
+        \item Скачать файл Pokemon.jar.
+        Его необходимо будет использовать как для компиляции, так и для запуска программы.
+        Распаковывать его не надо!
+        Нужно научиться подключать внешние jar-файлы к своей программе.
+        \item Написать минимально работающую программу и посмотреть как она работает.
+        \begin{lstlisting}[label={lst:java1}]
+            Battle b = new Battle();
+            Pokemon p1 = new Pokemon("Чужой", 1);
+            Pokemon p2 = new Pokemon("Хищник", 1);
+            b.addAlly(p1);
+            b.addFoe(p2);
+            b.go();
+        \end{lstlisting}
+        \item Создать один из классов покемонов для своего варианта.
+        Класс должен наследоваться от базового класса \verb|Pokemon|.
+        В конструкторе нужно будет задать типы покемона и его базовые характеристики.
+        После этого попробуйте добавить покемона в сражение.
+        \item Создать один из классов атак для своего варианта (лучше всего начать с физической или специальной атаки).
+        Класс должен наследоваться от класса \verb|PhysicalMove| или \verb|SpecialMove|.
+        В конструкторе нужно будет задать тип атаки, ее силу и точность.
+        После этого добавить атаку покемону и проверить ее действие в сражении.
+        Не забудьте переопределить метод \verb|describe|, чтобы выводилось нужное сообщение.
+        \item Если действие атаки отличается от стандартного, например, покемон не промахивается, либо атакующий покемон также получает повреждение, то в классе атаки нужно дополнительно переопределить соответствующие методы (см.
+        документацию).
+        При реализации атак, которые меняют статус покемона (наследники \verb|StatusMove|), скорее всего придется разобраться с классом \verb|Effect|.
+        Он позволяет на один или несколько ходов изменить состояние покемона или модификатор его базовых характеристик.
+        \item Доделать все необходимые атаки и всех покемонов, распределить покемонов по командам, запустить сражение.
+    \end{enumerate}
+    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
+        \centering
+        % { граница для иллюстрации
+        % \setlength{\fboxsep}{0pt}% убрать отсутп от границы
+        % \setlength{\fboxrule}{1pt}%
+        % \fbox{%
+        \includegraphics[width=\textwidth]{res/pokemons.jpeg}
+        % }} % ограничение области действия параметров
+        \caption{Покемоны и их атаки}
+        \label{fig:enter-label}
+    \end{figure}
+
+%    \begin{center}
+%        ' ' '
+%    \end{center}
+
+    \newpage
+    \Section{Выполнение задания.}
+    Задание было выполнено в редакторе кода IntejjiJ IDEA, собрано в \verb|jar| файл \verb|lab2.jar| и загружено в Git репозиторий на GitHub.
+%    \newpage
+    \Subsection{Листинги кода}
+    Листинг из файла~\ref{lst:java}
+    \lstinputlisting[caption={Исходный код главного класса программы},label={lst:java},language=Java]{../src/Main.java}
+
+%    Листинг в код latex \ref{lst:sql}
+%    \begin{lstlisting}[caption={SQL},label={lst:sql}]
+%declare @t table(
+%  id int
+%)
+%    \end{lstlisting}
+
+%    Листинг прямо в текст: \lstinline[columns=fixed]{declare}. Либо еще так: \verb|declare|.
+
+%    Вставленное изображение с описанием и шириной по тексту.
+    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
+        \centering
+        % { граница для иллюстрации
+        % \setlength{\fboxsep}{0pt}% убрать отсутп от границы
+        % \setlength{\fboxrule}{1pt}%
+        % \fbox{%
+        \includegraphics[width=\textwidth]{res/UML-class-diagram.png}
+        % }} % ограничение области действия параметров
+        \caption{UML диаграмма классов с методами и полями}
+        \label{fig:enter-label2}
+    \end{figure}
+
+
+% Выполнение задания...
+    \Section{Результат работы программы.}
+%    \Subsection{Первый запуск.}
+    \begin{lstlisting}[caption={Результат выполнения программы},label={lst:result}]
+    Carnivine Carnivine from the team Red enters the battle!
+    Igglybuff Iglybuff from the team Black enters the battle!
+    Carnivine Carnivine is using Crunch. The user crunches up the target with sharp fangs. This may also lower the target’s Defense stat.
+    Igglybuff Iglybuff loses 3 hit points.
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+    Carnivine Carnivine is paralyzed
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+    Igglybuff Iglybuff is paralyzed
+
+    Igglybuff Iglybuff misses
+
+    Igglybuff Iglybuff misses
+
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+
+
+    Igglybuff Iglybuff misses
+
+
+    Igglybuff Iglybuff misses
+
+    Igglybuff Iglybuff misses
+
+    Carnivine Carnivine is using Stun Spore. The user scatters a cloud of numbing powder that paralyzes the target.
+
+    Igglybuff Iglybuff misses
+
+    Carnivine Carnivine is using Crunch. The user crunches up the target with sharp fangs. This may also lower the target’s Defense stat.
+    Critical hit!
+    Carnivine Carnivine loses 9 hit points.
+
+    Carnivine Carnivine is using Crunch. The user crunches up the target with sharp fangs. This may also lower the target’s Defense stat.
+    Critical hit!
+    Carnivine Carnivine loses 7 hit points.
+    Both pokemons faint.
+    Zorua Zorua from the team Red enters the battle!
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Igglybuff Iglybuff decreases speed.
+
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff misses
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Igglybuff Iglybuff decreases speed.
+
+
+    Zorua Zorua is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Igglybuff Iglybuff increases attack.
+
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff hits himself in confusion.
+    Igglybuff Iglybuff loses 5 hit points.
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff misses
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+    Zorua Zorua is paralyzed
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff hits himself in confusion.
+    Igglybuff Iglybuff loses 4 hit points.
+
+
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Igglybuff Iglybuff decreases speed.
+
+
+    Zorua Zorua misses
+
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Igglybuff Iglybuff decreases speed.
+
+
+    Zorua Zorua is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Igglybuff Iglybuff increases attack.
+
+
+    Zorua Zorua misses
+
+    Igglybuff Iglybuff hits himself in confusion.
+    Igglybuff Iglybuff loses 4 hit points.
+    Igglybuff Iglybuff faints.
+    Jigglypuff Jigglypuff from the team Black enters the battle!
+    Zorua Zorua misses
+
+    Jigglypuff Jigglypuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Zorua Zorua misses
+
+    Jigglypuff Jigglypuff is using Hyper Voice. The user attacks by letting loose a horribly loud, resounding cry.
+    Zorua Zorua loses 10 hit points.
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Jigglypuff Jigglypuff decreases speed.
+
+    Jigglypuff Jigglypuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Zorua Zorua is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Zorua Zorua increases attack.
+
+    Zorua Zorua is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Zorua Zorua increases attack.
+
+    Jigglypuff Jigglypuff is using Hyper Voice. The user attacks by letting loose a horribly loud, resounding cry.
+    Critical hit!
+    Jigglypuff Jigglypuff loses 16 hit points.
+    Both pokemons faint.
+    Wigglytuff Wigglytuff from the team Black enters the battle!
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Wigglytuff Wigglytuff decreases speed.
+
+    Wigglytuff Wigglytuff is using Thunder Wave. The user launches a weak jolt of electricity that paralyzes the target.
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Zorua Zorua decreases speed.
+
+    Zorua Zorua is using Scary Face. The user frightens the target with a scary face to harshly lower its Speed stat.
+    Zorua Zorua decreases speed.
+
+    Wigglytuff Wigglytuff misses
+
+    Zorua Zorua hits himself in confusion.
+    Zorua Zorua loses 3 hit points.
+    Zorua Zorua faints.
+    Zoroark Zoroark from the team Red enters the battle!
+    Wigglytuff Wigglytuff misses
+
+    Zoroark Zoroark is using Swagger. The user enrages and confuses the target. However, this also sharply boosts the target’s Attack stat.
+    Wigglytuff Wigglytuff increases attack.
+
+    Wigglytuff Wigglytuff is using Hyper Voice. The user attacks by letting loose a horribly loud, resounding cry.
+    Critical hit!
+    Zoroark Zoroark loses 13 hit points.
+    Zoroark Zoroark faints.
+    Team Red loses its last Pokemon.
+    The team Black wins the battle!
+    \end{lstlisting}
+
+    \Section{Вывод}
+% Вывод...
+    Во время выполнения лабораторной работы я изучил принципы ООП, научился импортировать \verb|jar| файлы как библиотеки, научился расширять классы и рабоать с модификаторами доступа, ознакомился с системой сборки \verb|Gradle|, \verb|IDEA|. Также в процессе выполения я тесно работал с документацией\cite{sedoc} на библиотеку для покемонов и сторонними сайтами для поиска информации о покемонах (PokemonDB\cite{pokemondb}). Полученные мною знания являются необходимой базой для дальнейшего изучения языка и разработки уже более комлпексных проектов.\\
+    Помимо этого, я ознакомился с способами создания UML диаграм и сделал диаграмму на практике при помощи встроенных в IDE средств.
+% -- из biblist
+    \newpage
+%<<<<<<<<<<<<<<<<<<<<<< КОД РАБОТЫ <<<<<<<<<<<<<<<<<<<<<<<<
+
+
+%>>>>>>>>>>>>>>>> СПИСОК ЛИТЕРАТУРЫ >>>>>>>>>>>>>>>>>>>>>>>
+    \include{biblist}  % Для соответсвия гост, придется доработать. Нужен файл .bib
+%<<<<<<<<<<<<<<<<<<<< СПИСОК ЛИТЕРАТУРЫ <<<<<<<<<<<<<<<<<<<
+
+
+\end{document}
+%<<<<<<<<<<<<<<<< ,,,,,,,,,,,,,,,,,,,,,,, <<<<<<<<<<<<<<<<<
+%<<<<<<<<<<<<<<<<<<< СОДЕРЖИМОЕ ОТЧЕТА <<<<<<<<<<<<<<<<<<<<
